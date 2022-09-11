@@ -1,0 +1,161 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2020-02-22T22:12:01.906145541"/>
+	<meta name="changed" content="2020-02-23T12:25:14.514490530"/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115% }
+		pre.cjk { font-family: "DejaVu Sans Mono", monospace }
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0in; line-height: 100%">Act-report</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">I consolidate all
+the information in a single dataframe using the merge function.</p>
+<p style="margin-bottom: 0in; line-height: 100%">res_api.info()</p>
+<p style="margin-bottom: 0in; line-height: 100%">The frame contains
+the following information.</p>
+<pre class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal"><font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">Data columns (total 28 columns):</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">tweet_id              2331 non-null int64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">timestamp             2331 non-null datetime64[ns, UTC]</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">source_x              2331 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">expanded_urls         2272 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">rating_numerator      2331 non-null int64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">rating_denominator    2331 non-null int64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">name                  2331 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">pupper                2331 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">jpg_url               2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">img_num               2059 non-null float64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p1                    2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p1_conf               2059 non-null float64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p1_dog                2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p2                    2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p2_conf               2059 non-null float64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p2_dog                2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p3                    2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p3_conf               2059 non-null float64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">p3_dog                2059 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">created_at            2331 non-null datetime64[ns, UTC]</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">favorite_count        2331 non-null int64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">id                    2331 non-null int64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">is_quote_status       2331 non-null bool</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">retweet_count         2331 non-null int64</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">retweeted             2331 non-null bool</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">source_y              2331 non-null object</font></font></font>
+<font color="#000000"><font face="monospace"><font size="2" style="font-size: 10pt">user_id               2331 non-null objec</font></font></font></pre><p style="margin-bottom: 0in; line-height: 100%">
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">I decided to define
+a rating attribute.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">res_api['rating'] =
+res_api['rating_numerator'] / res_api['rating_denominator']</p>
+<p style="margin-bottom: 0in; line-height: 100%">res_api.sample(3)</p>
+<p style="margin-bottom: 0in; line-height: 100%"><img src="act-report_html_fc557826f5a50ebe.png" name="Image1" align="left" width="441" height="267" border="0"/>
+Pupper
+is the smallest category</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">There is a strong
+correlation between retweets and favorites.</p>
+<p style="margin-bottom: 0in; line-height: 100%"><img src="act-report_html_139e898b5128c7c4.png" name="Image2" align="left" width="460" height="281" border="0"/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%">The 3 best rated
+classes of dogs according to p1:</p>
+<p style="margin-bottom: 0in; line-height: 100%"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 100%"><img src="act-report_html_b9fed6c0cfa83a18.png" name="Image3" align="left" width="417" height="245" border="0"/>
+<br/>
+
+</p>
+</body>
+</html>

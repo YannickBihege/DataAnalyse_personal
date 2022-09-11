@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 6.0.7.3 (Linux)"/>
+	<meta name="created" content="2020-02-22T22:04:41.205305176"/>
+	<meta name="changed" content="2020-02-23T12:14:00.146984622"/>
+	<style type="text/css">
+		@page { margin: 0.79in }
+		p { margin-bottom: 0.1in; line-height: 115% }
+	</style>
+</head>
+<body lang="en-US" dir="ltr">
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">We
+have tree different data sources.</font></font></font></p>
+<ul>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Assess
+	the tidiness of the sets</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Assess
+	data quality issues: missing values, types, consistence, duplicates</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Summarize
+	the relevant issues before the cleaning phase</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Do
+	we have missing records</font></font></font></p>
+</ul>
+<p align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">These
+are the data quality issues which I identified:</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Quality
+issues</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">1)
+Data type: the date should be converted to timestamp</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">2)
+The retweeted status of the first dataframe are mostly not available.
+Therefore  the frame need to be merged with the api dataframe</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">3)6
+columns of the first dataframe (the archive) contains more than 80 %
+of null and non available values. These columns need to be filtered
+out. (in-reply-to-status-id, retweeted-status-id,
+retweeted-status-timestamp etc…)</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">4)
+Some prediction are not dogs. They need to be either filtered out.
+Alternatively we should only use the dogs prediction</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Tidiness</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">1)
+The rating numerator and the rating denumerator should be combined in
+a single column to get insight</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">2)
+The data extracted from the tweeter api are not tidy: the user column
+of the api dataframe contains id and idstr and the id should be
+extracted as int</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">3)
+The attribute idstr from the api is redundant and only increase the
+complexity of the final set</font></font></font></p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">4)
+The extenden entities column of the api dataframe contains redundant
+information and is not required for my analysis</font></font></font></p>
+<p align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Based
+on the issues:</font></font></font></p>
+<p align="left" style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">	I
+correct the date types of the dataframes.</font></font></font></p>
+<ul>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">There
+	is no need to handle missing values since this is going to affect
+	the integrity of the data.</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">I
+	create a copy of the three dataframes before starting the cleaning
+	phase.</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">I
+	visualized the missing values</font></font></font></p>
+</ul>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">I
+have 2356 tweets after the merging of the read csv and the prediction
+file. I need to choose which attributes to extract from the tweeter
+api dataframe. </font></font></font>
+</p>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">To
+limit the http requests I also decided to save my dataframes to csv
+and to reload them each time I restart my analysis.</font></font></font></p>
+<p align="left" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Consolidate
+the data in one or maximal two dataframes</font></font></font></p>
+<ul>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Select
+	the required columns</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Filter
+	the retweets</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Handle
+	the missing values </font></font></font>
+	</p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">The
+	userId column of the api dataframe contains id and idstr and should
+	be extracted an integer</font></font></font></p>
+	<li/>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font color="#000000"><font face="Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">The
+	extended_entities column contains two fields</font></font></font></p>
+</ul>
+<p style="margin-bottom: 0.09in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p align="left" style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+</body>
+</html>

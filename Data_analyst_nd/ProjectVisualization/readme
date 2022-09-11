@@ -1,0 +1,7 @@
+We analyze the loan financial data
+-The notebook contains the consecutive wrangling phase followed by the exploratory and explanatory visualization
+-A html and the notebook are part of the deliverables
+-SLide deck can be served using :
+   jupyter nbconvert Visualization.ipynb --to slides --post serve
+
+
