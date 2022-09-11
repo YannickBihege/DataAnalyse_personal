@@ -1,0 +1,10 @@
+You can also reset the data on your docker compose. So first stop your 
+
+
+docker compose sudo docker-compose down
+
+Then sudo 
+
+docker volumes prune 
+
+Then sudo docker-compose up -d and s

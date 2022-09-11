@@ -1,0 +1,11 @@
+
+pip install virtualenv
+
+#create env linux
+python -m virtualenv virtualfolder
+#windows
+python -m venv virtualfolder
+
+
+source activate your env
+pip freeze > requirements.txt

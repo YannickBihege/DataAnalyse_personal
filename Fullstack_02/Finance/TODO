@@ -1,0 +1,10 @@
+pip install virtualvenv
+
+python3 -m venv virtual
+
+
+yannick@ubuntu:~/Documents/Fullstack_02/Finance$ virtual/bin/pip install bokeh
+
+
+
+virtual/bin/pip install flask
