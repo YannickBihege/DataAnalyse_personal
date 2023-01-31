@@ -108,23 +108,7 @@ Read through our [contributing guidelines][contributing] to learn about our subm
 
 ### Want to Help?
 
-Want to report a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines for [contributing][contributing] and then check out one of our issues labeled as <kbd>[help wanted](https://github.com/angular/angular/labels/help%20wanted)</kbd> or <kbd>[good first issue](https://github.com/angular/angular/labels/good%20first%20issue)</kbd>.
-
+Want to report a bug, contribute some code, or improve documentation? Excellent! Read up on our guidelines 
 
 ## Community
 
-Join the conversation and help the community.
-
-- [Twitter][twitter]
-- [Discord][discord]
-- [Gitter][gitter]
-
-
-[![Love Angular badge](https://img.shields.io/badge/angular-love-blue?logo=angular&angular=love)](https://www.github.com/angular/angular)
-
-**Love data analysis? Give our repo a star :star: :arrow_up:.**
-
-[contributing]: CONTRIBUTING.md
-[quickstart]: https://angular.io/start
-[meetup]: https://www.meetup.com/find/?keywords=angular
-[animations]: https://angular.io/guide/animations
